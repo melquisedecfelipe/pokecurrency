@@ -1,21 +1,21 @@
-<h1>PokeDolar</h1>
+<h1>PokeCurrency</h1>
 
 <p>
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/melquisedecfelipe/pokedolar.svg">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/melquisedecfelipe/pokecurrency.svg">
 
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/melquisedecfelipe/pokedolar.svg">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/melquisedecfelipe/pokecurrency.svg">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/melquisedecfelipe/pokedolar.svg">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/melquisedecfelipe/pokecurrency.svg">
 
-  <a href="https://github.com/melquisedecfelipe/pokedolar/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/melquisedecfelipe/pokedolar.svg">
+  <a href="https://github.com/melquisedecfelipe/pokecurrency/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/melquisedecfelipe/pokecurrency.svg">
   </a>
 
-  <a href="https://github.com/melquisedecfelipe/pokedolar/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/melquisedecfelipe/pokedolar.svg">
+  <a href="https://github.com/melquisedecfelipe/pokecurrency/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/melquisedecfelipe/pokecurrency.svg">
   </a>
 
-  <img alt="GitHub" src="https://img.shields.io/github/license/melquisedecfelipe/pokedolar.svg">
+  <img alt="GitHub" src="https://img.shields.io/github/license/melquisedecfelipe/pokecurrency.svg">
 </p>
 
 <p>
@@ -40,10 +40,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/melquisedecfelipe/pokedolar
+$ git clone https://github.com/melquisedecfelipe/pokecurrency
 
 # Go into the repository and install dependencies
-$ cd pokedolar && npm i
+$ cd pokecurrency && npm i
 
 # Run frontend
 $ npm start
@@ -51,7 +51,7 @@ $ npm start
 
 ## :memo: License
 
-This project is under the MIT license. See the [LICENSE](https://github.com/melquisedecfelipe/pokedolar/blob/master/LICENSE) for more information.
+This project is under the MIT license. See the [LICENSE](https://github.com/melquisedecfelipe/pokecurrency/blob/master/LICENSE) for more information.
 
 ---
 
