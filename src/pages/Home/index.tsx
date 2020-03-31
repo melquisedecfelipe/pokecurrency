@@ -29,6 +29,7 @@ interface Option {
 const Home: React.FC = () => {
   const [color, setColor] = useState<string>('#191919');
   const [currency, setCurrency] = useState<string>('');
+  const [image, setImage] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [option, setOption] = useState<Option>({
     currency: 'USD',
@@ -42,22 +43,23 @@ const Home: React.FC = () => {
 
       const formatDolar = parseFloat(data[option?.currency].ask).toFixed(2);
 
-      if (data) {
-        const hexadecimal = await getDominantColor(
-          `https://pokeres.bastionbot.org/images/pokemon/${formatDolar.replace(
-            '.',
-            ''
-          )}.png`
-        );
+      setCurrency(formatDolar);
+      setImage(
+        `https://pokeres.bastionbot.org/images/pokemon/${formatDolar.replace(
+          '.',
+          ''
+        )}.png`
+      );
+
+      if (image !== '') {
+        const hexadecimal = await getDominantColor(image);
 
         setColor(hexadecimal.Vibrant!.hex);
       }
-
-      setCurrency(formatDolar);
     };
 
     getDolar();
-  }, [option]);
+  }, [image, option]);
 
   useEffect(() => {
     const getPokemon = async () => {
@@ -117,13 +119,7 @@ const Home: React.FC = () => {
           valor R$<span>{currency.replace('.', ',')}</span>
         </h1>
         {currency !== '' && loading === false ? (
-          <img
-            src={`https://pokeres.bastionbot.org/images/pokemon/${currency.replace(
-              '.',
-              ''
-            )}.png`}
-            alt={pokemon?.name}
-          />
+          <img src={image} alt={pokemon?.name} />
         ) : (
           <span className='load'>
             <FaCircleNotch />
