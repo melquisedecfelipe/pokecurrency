@@ -103,7 +103,7 @@ const Home: React.FC = () => {
         <span>
           <p>Give me star</p>
           <a
-            href='http://github.com/melquisedecfelipe/pokedolar'
+            href='http://github.com/melquisedecfelipe/pokecurrency'
             target='_blank'
             rel='noopener noreferrer'
           >
