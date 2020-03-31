@@ -1,7 +1,7 @@
 {
   "name": "PokeCurrency",
   "theme_color": "#fff",
-  "background_color": "#000",
+  "background_color": "#191919",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
