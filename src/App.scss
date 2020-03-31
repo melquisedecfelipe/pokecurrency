@@ -7,8 +7,10 @@
   box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
   -webkit-font-smoothing: antialiased;
+  color: #fff;
 }
 
-p {
-  font-size: 17px;
+body {
+  background-color: #191919;
+  transition: background-color 0.25s linear;
 }

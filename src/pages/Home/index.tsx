@@ -27,7 +27,6 @@ interface Option {
 }
 
 const Home: React.FC = () => {
-  const [color, setColor] = useState<string>('#191919');
   const [currency, setCurrency] = useState<string>('');
   const [image, setImage] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
@@ -54,7 +53,8 @@ const Home: React.FC = () => {
       if (image !== '') {
         const hexadecimal = await getDominantColor(image);
 
-        setColor(hexadecimal.Vibrant!.hex);
+        const body = document.getElementsByTagName('body')[0];
+        body.style.backgroundColor = hexadecimal.Vibrant!.hex;
       }
     };
 
@@ -86,20 +86,22 @@ const Home: React.FC = () => {
   }, [currency]);
 
   return (
-    <main style={{ backgroundColor: color }}>
+    <>
       <nav>
-        <button
-          type='button'
-          onClick={() => setOption({ currency: 'USD', label: 'Dolar' })}
-        >
-          Dolar
-        </button>
-        <button
-          type='button'
-          onClick={() => setOption({ currency: 'EUR', label: 'Euro' })}
-        >
-          Euro
-        </button>
+        <div>
+          <button
+            type='button'
+            onClick={() => setOption({ currency: 'USD', label: 'Dolar' })}
+          >
+            Dolar
+          </button>
+          <button
+            type='button'
+            onClick={() => setOption({ currency: 'EUR', label: 'Euro' })}
+          >
+            Euro
+          </button>
+        </div>
         <span>
           <p>Give me star</p>
           <a
@@ -111,13 +113,29 @@ const Home: React.FC = () => {
           </a>
         </span>
       </nav>
-      <div>
-        <p>#{pokemon?.id}</p>
-        <p className='comercial'>{option.label} para Real</p>
-        <h2>{pokemon?.name}</h2>
-        <h1>
-          valor R$<span>{currency.replace('.', ',')}</span>
-        </h1>
+      <main>
+        <section>
+          <div>
+            <p>
+              #{pokemon?.id} | {option.label} para Real
+            </p>
+            <h2>{pokemon?.name}</h2>
+            <h1>
+              valor R$<span>{currency.replace('.', ',')}</span>
+            </h1>
+          </div>
+          <div>
+            <p>Base:</p>
+            <div className='base-stats'>
+              <p>HP: {pokemon?.baseStats?.hp}</p>
+              <p>Ataque: {pokemon?.baseStats?.attack}</p>
+              <p>Defesa: {pokemon?.baseStats?.defense}</p>
+              <p>SP. Ataque: {pokemon?.baseStats?.specialAttack}</p>
+              <p>SP. Defesa: {pokemon?.baseStats?.specialDefense}</p>
+              <p>Velocidade: {pokemon?.baseStats?.speed}</p>
+            </div>
+          </div>
+        </section>
         {currency !== '' && loading === false ? (
           <img src={image} alt={pokemon?.name} />
         ) : (
@@ -125,21 +143,8 @@ const Home: React.FC = () => {
             <FaCircleNotch />
           </span>
         )}
-      </div>
-      <div>
-        <p>Base:</p>
-        {pokemon?.baseStats && (
-          <div className='base-stats'>
-            <p>HP: {pokemon?.baseStats?.hp}</p>
-            <p>Ataque: {pokemon?.baseStats?.attack}</p>
-            <p>Defesa: {pokemon?.baseStats?.defense}</p>
-            <p>SP. Ataque: {pokemon?.baseStats?.specialAttack}</p>
-            <p>SP. Defesa: {pokemon?.baseStats?.specialDefense}</p>
-            <p>Velocidade: {pokemon?.baseStats?.speed}</p>
-          </div>
-        )}
-      </div>
-    </main>
+      </main>
+    </>
   );
 };
 

@@ -1,21 +1,18 @@
-main {
-  width: 100%;
-  min-height: 100vh;
-  color: #fff;
-  transition: all 0.25s linear;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 20px;
 
-  > nav {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 30px 20px 0 20px;
-
+  > div {
     > button {
       background: none;
       border: none;
       font-size: 20px;
       font-weight: 300;
       letter-spacing: 0.2em;
-      color: #fff;
       opacity: 1;
       text-transform: uppercase;
       transition: color 0.25s linear;
@@ -29,152 +26,131 @@ main {
         opacity: 0.5;
       }
     }
-
-    > span {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-
-      > a {
-        font-size: 40px;
-        color: #fff;
-        opacity: 0.5;
-        transition: all 0.25s linear;
-      }
-
-      > p {
-        opacity: 0;
-        transition: all 0.25s linear;
-      }
-
-      &:hover {
-        > a {
-          opacity: 1;
-          color: #fff;
-        }
-
-        > p {
-          opacity: 1;
-          margin-right: 20px;
-          color: #fff;
-        }
-      }
-    }
   }
 
-  > div {
+  > span {
     display: flex;
-    flex-direction: column;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
+    align-items: center;
+
+    > a {
+      font-size: 40px;
+      transition: all 0.25s linear;
+    }
 
     > p {
-      font-size: 20px;
-      margin-top: 30px;
-      margin-bottom: 10px;
+      opacity: 0;
+      transition: all 0.25s linear;
     }
 
-    > .comercial {
-      position: absolute;
-      top: 0;
-      right: 0;
-      right: 20px;
-    }
-
-    > h2,
-    h1 {
-      font-size: 40px;
-      font-weight: 800;
-      text-transform: capitalize;
-
-      > span {
-        font-size: 60px;
-      }
-    }
-
-    > img,
-    .load {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin-top: 50px;
-
-      > svg {
-        font-size: 80px;
-        animation: rotate 2s linear infinite;
-        margin: 125px;
-      }
-    }
-
-    > .base-stats {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 400px;
-      margin-bottom: 50px;
-
+    &:hover {
       > p {
-        background-color: #fff;
-        box-shadow: 0 20px 25px -10px rgba(0, 0, 0, 0.15);
-        border-radius: 10px;
-        padding: 10px 20px;
-        margin: 5px 10px 5px 0;
-        font-size: 14px;
-        color: #111;
+        opacity: 1;
+        margin-right: 20px;
       }
     }
   }
 }
 
-@media screen and (min-width: 768px) {
-  main {
-    > nav {
-      padding: 30px 100px 0 100px;
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  transition: all 0.25s ease-out;
 
-      > span {
-        right: 110px;
-      }
-    }
+  > section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
 
     > div {
-      padding: 0 100px;
-
-      > .comercial {
-        top: 100px;
-        right: -100px;
-        transform: rotate(-90deg) translateY(20px) translateX(30px);
+      > p {
+        font-size: 20px;
+        margin-bottom: 10px;
       }
 
-      > img,
-      .load {
-        width: 400px;
-        height: 400px;
-        position: absolute;
-        top: 250px;
-        left: 300px;
-        margin-top: 0;
+      > h2 {
+        text-transform: capitalize;
       }
+
+      > h2,
+      h1 {
+        font-size: 40px;
+        font-weight: 800;
+        z-index: 1;
+
+        > span {
+          font-size: 60px;
+        }
+      }
+
+      > .base-stats {
+        display: flex;
+        flex-wrap: wrap;
+
+        > p {
+          background-color: #fff;
+          box-shadow: 0 20px 25px -10px rgba(0, 0, 0, 0.15);
+          border-radius: 10px;
+          padding: 10px 15px;
+          margin: 5px 10px 5px 0;
+          font-size: 14px;
+          color: #111;
+        }
+      }
+
+      & + div {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  > img,
+  .load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    transition: all 0.25s ease-out;
+
+    > svg {
+      font-size: 80px;
+      animation: rotate 2s linear infinite;
+    }
+  }
+
+  > img:hover {
+    transform: scale(1.05);
+  }
+
+  .load {
+    height: 500px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    padding: 30px 50px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+
+    > section {
+      padding: 30px 50px;
+    }
+
+    > img {
+      padding: 0 50px;
     }
   }
 }
 
 @media screen and (min-width: 1024px) {
   main {
-    > div {
-      > img,
-      .load {
-        top: 150px;
-        left: 550px;
-      }
-
-      > .base-stats {
-        max-width: 450px;
-      }
+    > img {
+      padding: 0;
     }
   }
 }
