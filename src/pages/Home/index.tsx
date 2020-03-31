@@ -132,14 +132,16 @@ const Home: React.FC = () => {
       </div>
       <div>
         <p>Base:</p>
-        <div className='base-stats'>
-          <p>HP: {pokemon?.baseStats?.hp}</p>
-          <p>Ataque: {pokemon?.baseStats?.attack}</p>
-          <p>Defesa: {pokemon?.baseStats?.defense}</p>
-          <p>SP. Ataque: {pokemon?.baseStats?.specialAttack}</p>
-          <p>SP. Defesa: {pokemon?.baseStats?.specialDefense}</p>
-          <p>Velocidade: {pokemon?.baseStats?.speed}</p>
-        </div>
+        {pokemon?.baseStats && (
+          <div className='base-stats'>
+            <p>HP: {pokemon?.baseStats?.hp}</p>
+            <p>Ataque: {pokemon?.baseStats?.attack}</p>
+            <p>Defesa: {pokemon?.baseStats?.defense}</p>
+            <p>SP. Ataque: {pokemon?.baseStats?.specialAttack}</p>
+            <p>SP. Defesa: {pokemon?.baseStats?.specialDefense}</p>
+            <p>Velocidade: {pokemon?.baseStats?.speed}</p>
+          </div>
+        )}
       </div>
     </main>
   );
