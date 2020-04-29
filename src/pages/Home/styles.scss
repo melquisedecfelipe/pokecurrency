@@ -41,13 +41,6 @@ nav {
       opacity: 0;
       transition: all 0.25s linear;
     }
-
-    &:hover {
-      > p {
-        opacity: 1;
-        margin-right: 20px;
-      }
-    }
   }
 }
 
@@ -130,6 +123,15 @@ main {
 @media screen and (min-width: 768px) {
   nav {
     padding: 30px 50px;
+
+    > span {
+      &:hover {
+        > p {
+          opacity: 1;
+          margin-right: 20px;
+        }
+      }
+    }
   }
 
   main {
