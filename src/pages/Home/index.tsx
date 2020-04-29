@@ -32,7 +32,7 @@ const Home: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [option, setOption] = useState<Option>({
     currency: 'USD',
-    label: 'Dolar'
+    label: 'Dolar',
   });
   const [pokemon, setPokemon] = useState<Pokemon>();
 
@@ -46,8 +46,8 @@ const Home: React.FC = () => {
       setImage(
         `https://pokeres.bastionbot.org/images/pokemon/${formatDolar.replace(
           '.',
-          ''
-        )}.png`
+          '',
+        )}.png`,
       );
 
       if (image !== '') {
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
     const getPokemon = async () => {
       setLoading(true);
       const { data } = await pokeapi.get(
-        `pokemon/${currency.replace('.', '')}`
+        `pokemon/${currency.replace('.', '')}`,
       );
       const { id, name, stats } = data;
 
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
         specialAttack: stats[2]?.base_stat,
         defense: stats[3]?.base_stat,
         attack: stats[4]?.base_stat,
-        hp: stats[5]?.base_stat
+        hp: stats[5]?.base_stat,
       };
 
       setPokemon({ id, name, baseStats });
@@ -90,13 +90,13 @@ const Home: React.FC = () => {
       <nav>
         <div>
           <button
-            type='button'
+            type="button"
             onClick={() => setOption({ currency: 'USD', label: 'Dolar' })}
           >
             Dolar
           </button>
           <button
-            type='button'
+            type="button"
             onClick={() => setOption({ currency: 'EUR', label: 'Euro' })}
           >
             Euro
@@ -105,9 +105,9 @@ const Home: React.FC = () => {
         <span>
           <p>Give me star</p>
           <a
-            href='http://github.com/melquisedecfelipe/pokecurrency'
-            target='_blank'
-            rel='noopener noreferrer'
+            href="http://github.com/melquisedecfelipe/pokecurrency"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaGithub />
           </a>
@@ -126,7 +126,7 @@ const Home: React.FC = () => {
           </div>
           <div>
             <p>Base:</p>
-            <div className='base-stats'>
+            <div className="base-stats">
               <p>HP: {pokemon?.baseStats?.hp}</p>
               <p>Ataque: {pokemon?.baseStats?.attack}</p>
               <p>Defesa: {pokemon?.baseStats?.defense}</p>
@@ -139,7 +139,7 @@ const Home: React.FC = () => {
         {currency !== '' && loading === false ? (
           <img src={image} alt={pokemon?.name} />
         ) : (
-          <span className='load'>
+          <span className="load">
             <FaCircleNotch />
           </span>
         )}
