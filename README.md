@@ -30,7 +30,9 @@
 This project was developed with the following technologies:
 
 - [Axios](https://github.com/axios/axios)
+- [Eslint](https://eslint.org/)
 - [Node vibrant](https://github.com/akfish/node-vibrant)
+- [Prettier](https://prettier.io/)
 - [React](https://reactjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
 
@@ -43,10 +45,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 $ git clone https://github.com/melquisedecfelipe/pokecurrency
 
 # Go into the repository and install dependencies
-$ cd pokecurrency && npm i
+$ cd pokecurrency && yarn
 
 # Run frontend
-$ npm start
+$ yarn start
 ```
 
 ## :memo: License
