@@ -29,18 +29,7 @@ nav {
   }
 
   > span {
-    display: flex;
-    align-items: center;
-
-    > a {
-      font-size: 40px;
-      transition: all 0.25s linear;
-    }
-
-    > p {
-      opacity: 0;
-      transition: all 0.25s linear;
-    }
+    display: none;
   }
 }
 
@@ -125,11 +114,24 @@ main {
     padding: 30px 50px;
 
     > span {
+      display: flex;
+      align-items: center;
+
       &:hover {
         > p {
           opacity: 1;
           margin-right: 20px;
         }
+      }
+
+      > a {
+        font-size: 40px;
+        transition: all 0.25s linear;
+      }
+
+      > p {
+        opacity: 0;
+        transition: all 0.25s linear;
       }
     }
   }
