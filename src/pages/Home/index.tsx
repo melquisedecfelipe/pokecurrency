@@ -101,6 +101,12 @@ const Home: React.FC = () => {
           >
             Euro
           </button>
+          <button
+            type="button"
+            onClick={() => setOption({ currency: 'GBP', label: 'Libra' })}
+          >
+            Libra
+          </button>
         </div>
         <span>
           <p>Give me star</p>
